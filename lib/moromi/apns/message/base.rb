@@ -18,7 +18,7 @@ module Moromi::Apns::Message
     end
 
     def custom_data
-      {type: type}.merge(@custom_data)
+      {type: type}.merge(@parameter.custom_data)
     end
 
     def serialize
