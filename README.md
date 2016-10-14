@@ -1,6 +1,6 @@
 # Moromi::Apns
 
-[![Latest Version](https://img.shields.io/gem/v/moromi.svg)](http://rubygems.org/gems/moromi-apns)
+[![Latest Version](https://img.shields.io/gem/v/moromi-apns.svg)](http://rubygems.org/gems/moromi-apns)
 [![Circle CI](https://circleci.com/gh/moromi/moromi-apns.svg?style=svg)](https://circleci.com/gh/moromi/moromi-apns)
 
 APNS model.

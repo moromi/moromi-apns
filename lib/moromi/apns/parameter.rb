@@ -8,14 +8,16 @@ module Moromi
       attr_reader :badge
       attr_reader :sound
       attr_reader :content_available
+      attr_reader :category
       attr_reader :priority
       attr_reader :custom_data
 
-      def initialize(alert:, badge:, sound: 'default', content_available: 1, priority: 10, custom_data: {})
+      def initialize(alert:, badge:, sound: 'default', content_available: 1, category: nil, priority: 10, custom_data: {})
         @alert = alert
         @badge = badge
         @sound = sound
         @content_available = content_available
+        @category = category
         @priority = priority
         @custom_data = custom_data
       end
@@ -34,6 +36,7 @@ module Moromi
           badge: @badge,
           sound: @sound,
           content_available: @content_available,
+          category: @category,
           priority: @priority,
           custom_data: @custom_data
         }.to_json
@@ -46,6 +49,7 @@ module Moromi
           badge: hash[:badge],
           sound: hash[:sound],
           content_available: hash[:content_available],
+          category: hash[:category],
           priority: hash[:priority],
           custom_data: hash[:custom_data]
         )
