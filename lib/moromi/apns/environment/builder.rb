@@ -10,7 +10,7 @@ module Moromi::Apns::Environment
           return environment if identifier == environment.identifier
         end
 
-        raise InvalidEnvironment
+        raise InvalidEnvironment.new(identifier)
       end
     end
   end
