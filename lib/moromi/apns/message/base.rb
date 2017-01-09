@@ -15,7 +15,7 @@ module Moromi::Apns::Message
     end
 
     def type
-      type || self.class.name
+      @type || self.class.name
     end
 
     def custom_data
