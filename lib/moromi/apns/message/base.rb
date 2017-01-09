@@ -9,12 +9,13 @@ module Moromi::Apns::Message
     def_delegators :@parameter, :alert, :badge, :sound, :content_available, :mutable_content, :category, :priority
 
     # @param [Moromi::Apns::Parameter] parameter
-    def initialize(parameter:)
+    def initialize(parameter:, type: nil)
       @parameter = parameter
+      @type = type
     end
 
     def type
-      self.class.name
+      type || self.class.name
     end
 
     def custom_data
@@ -45,7 +46,7 @@ module Moromi::Apns::Message
     # @param [Hash] params
     def self.unserialize(params)
       parameter = ::Moromi::Apns::Parameter.unserialize(params[:parameter])
-      new(parameter: parameter)
+      new(parameter: parameter, type: params[:type])
     end
   end
 end
