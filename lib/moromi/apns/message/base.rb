@@ -6,7 +6,7 @@ module Moromi::Apns::Message
 
     attr_reader :parameter
 
-    def_delegators :@parameter, :alert, :badge, :sound, :content_available, :category, :priority
+    def_delegators :@parameter, :alert, :badge, :sound, :content_available, :mutable_content, :category, :priority
 
     # @param [Moromi::Apns::Parameter] parameter
     def initialize(parameter:)
