@@ -28,6 +28,20 @@ module Moromi::Apns::Message
       }
     end
 
+    def to_hash
+      base = {
+        aps: {
+          badge: badge,
+          alert: alert,
+          sound: sound,
+          'content-available' => content_available,
+          'mutable-content' => mutable_content,
+          priority: priority
+        }
+      }
+      custom_data.merge(base)
+    end
+
     # @param [Hash] params
     def self.unserialize(params)
       parameter = ::Moromi::Apns::Parameter.unserialize(params[:parameter])
